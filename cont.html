@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+   <script src="contact.js"></script>
+   <title>Document</title>
+   <style>
+      * {
+         margin: 0;
+         font-family: Poppins;
+
+      }
+
+      body {
+         background-color: black;
+         color: white;
+      }
+
+      .navbar {
+         background-color: rgb(69, 63, 63);
+         height: 60px;
+         /* Height thodi badhai hai taki padding sahi dikhe */
+         border-radius: 10px;
+         display: flex;
+         justify-content: space-between;
+         /* Isse Naam left mein aur Links right mein ho jayenge */
+         align-items: center;
+         padding: 0 30px;
+         /* Sides mein thodi jagah dene ke liye */
+
+      }
+
+      .navbarleft a {
+         color: white;
+         text-decoration: none;
+         font-size: 1.1rem;
+         font-weight: 500;
+         padding: 0.5rem 1rem;
+         border-radius: 25px;
+         transition: all 0.3s ease;
+         position: relative;
+      }
+
+      .navbarleft a:hover {
+         background: rgba(255, 255, 255, 0.2);
+         transform: translateY(-2px);
+      }
+
+      /* Active/Underline Home */
+      .navbarleft .active {
+         background: rgba(255, 255, 255, 0.3);
+      }
+
+      .navbarleft .active::after {
+         content: '';
+         position: absolute;
+         bottom: -10px;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 60%;
+         height: 3px;
+         background: #fff;
+         border-radius: 6px;
+      }
+
+      /* Aapka Naam (Logo) */
+      .logo {
+         color: white;
+         font-size: 22px;
+         font-weight: lighter;
+      }
+
+      /* Right Side Links Box */
+      .navbarleft {
+         display: flex;
+         gap: 7rem;
+         /* Links ke beech mein barabar gap ke liye */
+      }
+
+      /* Links Ki Styling */
+      .navbarleft a {
+         text-decoration: none;
+         color: white;
+         font-size: 15px;
+         font-weight: lighter;
+         transition: 0.3s;
+      }
+
+      /* Hover Effect */
+      .navbarleft a:hover {
+         transform: translateY(-2px);
+         color: #ddd;
+         /* Hover par thoda light color */
+      }
+
+
+      .firstsection {
+         text-align: center;
+      }
+
+      .firstsection b {
+         font-size: 2.5rem;
+      }
+
+      .box {
+         height: auto;
+         width: 90%;
+         display: flex;
+         color: white;
+         border-radius: 8px;
+         gap: 1.5rem;
+         margin: 5rem;
+
+      }
+
+      .firstbox {
+         height: 25rem;
+
+         flex: 0.5;
+         /* Dono ko barabar jagah milegi */
+         border-radius: 10px;
+         display: flex;
+         /* Iske andar ke content ko align karne ke liye */
+         flex-direction: column;
+         /* Content upar-niche rahega */
+
+         /* Sections ke beech gap */
+         background-color: black;
+
+      }
+
+      .secondbox {
+         height: 25rem;
+         flex: 1;
+
+         /* Dono ko barabar jagah milegi */
+         border-radius: 10px;
+         display: flex;
+         /* Iske andar ke content ko align karne ke liye */
+         flex-direction: column;
+         /* Content upar-niche rahega */
+
+         /* Sections ke beech gap */
+         background-color: rgb(35, 35, 60);
+         border: 2px solid #7C3AED;
+
+      }
+
+      .innerbox {
+         height: 5rem;
+         width: 90%;
+         background-color: rgb(35, 35, 60);
+         flex-direction: row;
+         border-radius: 4px;
+         display: flex;
+         margin-top: 2rem;
+         align-items: center;
+         padding: 0 1rem;
+         border: 1px solid rgb(120, 60, 220);
+      }
+
+      .contact-text {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         color: white;
+         margin: 1rem;
+      }
+
+      .icon {
+         background-color: #9933FF;
+         height: 2rem;
+         width: 2rem;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 8px;
+      }
+
+      .innerbox1 {
+         height: 5rem;
+         width: 90%;
+         background-color: rgb(35, 35, 60);
+         flex-direction: row;
+         border-radius: 4px;
+         display: flex;
+         margin-top: 2rem;
+         align-items: center;
+         padding: 0 1rem;
+         border: 1px solid rgb(120, 60, 220);
+
+      }
+
+      .contact-text1 {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         color: white;
+         margin: 1rem;
+      }
+
+      .icon1 {
+         background-color: #9933FF;
+         height: 2rem;
+         width: 2rem;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 8px;
+      }
+
+      .innerbox2 {
+         height: 5rem;
+         width: 90%;
+         background-color: rgb(35, 35, 60);
+         flex-direction: row;
+         border-radius: 4px;
+         display: flex;
+         margin-top: 2rem;
+         align-items: center;
+         padding: 0 1rem;
+         border: 1px solid rgb(120, 60, 220);
+
+      }
+
+      .contact-text2 {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         color: white;
+         margin: 1rem;
+      }
+
+      .icon2 {
+         background-color: #9933FF;
+         height: 2rem;
+         width: 2rem;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 8px;
+      }
+
+      .namebox {
+         display: flex;
+         flex-direction: row;
+         gap: 2rem;
+         margin: 1.4rem;
+
+      }
+
+      .name {
+         display: flex;
+         flex-direction: column;
+         flex: 1;
+
+      }
+
+      body input {
+         background-color: black;
+         border-bottom: none;
+         border-left: none;
+         border: 1px solid rgb(82, 52, 96);
+         height: 1.5rem;
+         color: white;
+      }
+
+      .email {
+         flex: 1;
+         display: flex;
+         flex-direction: column;
+      }
+
+      .subjectbox {
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+         width: 94%;
+         margin-left: 1.4rem;
+
+      }
+
+      .subject {
+
+         display: flex;
+         flex-direction: column;
+
+
+      }
+
+      .messagebox {
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+         margin: 1.6rem;
+      }
+
+      .message {
+         display: flex;
+         flex-direction: column;
+         flex: 1;
+
+      }
+
+      body textarea {
+         background-color: black;
+         height: 5rem;
+         border: 1px solid rgb(82, 52, 96);
+         border-radius: 5px;
+         color: white;
+      }
+
+      textarea::placeholder {
+         color: white;
+      }
+
+
+      .buttonbox {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      body button {
+         font-size: 15px;
+         background-color: #9933FF;
+         color: white;
+         border: 2px solid black;
+         border-radius: 5px;
+         cursor: pointer;
+         margin-top: 0px;
+         transition: 0.3s ease;
+         height: 2rem;
+         width: 93%;
+
+      }
+
+      body button:hover {
+         color: white;
+      }
+
+      @media screen and (max-width: 480px) {
+         body {
+            padding: 10px !important;
+         }
+
+
+         .navbar {
+            height: 50px !important;
+            padding: 0 12px !important;
+            border-radius: 8px !important;
+         }
+
+         .logo {
+            font-size: 18px !important;
+         }
+
+         .navbarleft {
+            gap: 8px !important;
+         }
+
+         .navbarleft a {
+            font-size: 13px !important;
+            padding: 6px 12px !important;
+         }
+
+
+         .firstsection {
+            padding: 20px 10px !important;
+         }
+
+         .firstsection b {
+            font-size: 1.8rem !important;
+            line-height: 1.2 !important;
+         }
+
+
+         .box {
+            width: 98% !important;
+            margin: 20px auto !important;
+            flex-direction: column !important;
+            gap: 20px !important;
+         }
+
+         .firstbox,
+         .secondbox {
+            width: 100% !important;
+            height: auto !important;
+            min-height: 220px !important;
+         }
+
+
+         .innerbox,
+         .innerbox1,
+         .innerbox2 {
+            width: 92% !important;
+            height: 60px !important;
+            margin-top: 12px !important;
+            padding: 10px !important;
+            font-size: 14px !important;
+         }
+
+         .icon,
+         .icon1,
+         .icon2 {
+            width: 35px !important;
+            height: 35px !important;
+            font-size: 14px !important;
+         }
+
+         .contact-text,
+         .contact-text1,
+         .contact-text2 {
+            margin: 0 12px !important;
+            font-size: 14px !important;
+         }
+
+
+         .namebox {
+            flex-direction: column !important;
+            gap: 15px !important;
+            margin: 20px 15px !important;
+         }
+
+         .name,
+         .email {
+            width: 100% !important;
+         }
+
+         body input {
+            width: 100% !important;
+            height: 45px !important;
+            font-size: 16px !important;
+           
+            padding: 10px !important;
+         }
+
+         .subjectbox {
+            width: 92% !important;
+            margin-left: 20px !important;
+            gap: 15px !important;
+         }
+
+         .messagebox {
+            margin: 20px !important;
+            gap: 15px !important;
+         }
+
+         body textarea {
+            height: 100px !important;
+            width: 100% !important;
+            font-size: 16px !important;
+            padding: 12px !important;
+            resize: vertical !important;
+         }
+
+         .buttonbox {
+            margin: 20px !important;
+         }
+
+         body button {
+            width: 95% !important;
+            height: 50px !important;
+            font-size: 16px !important;
+            padding: 0 20px !important;
+         }
+      }
+
+      /* TABLET (481px-768px) */
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+         .navbar {
+            height: 55px !important;
+            padding: 0 20px !important;
+         }
+
+         .navbarleft {
+            gap: 2rem !important;
+         }
+
+         .box {
+            width: 95% !important;
+            margin: 30px auto !important;
+            gap: 25px !important;
+         }
+
+         .firstbox,
+         .secondbox {
+            min-height: 240px !important;
+         }
+
+         .namebox {
+            gap: 20px !important;
+            margin: 25px !important;
+         }
+
+         body input,
+         body textarea {
+            height: 48px !important;
+         }
+
+         body button {
+            height: 48px !important;
+         }
+      }
+
+      /* SMALL LAPTOP (769px-1024px) */
+      @media screen and (min-width: 769px) and (max-width: 1024px) {
+         .box {
+            width: 92% !important;
+            margin: 40px auto !important;
+         }
+
+         .navbarleft {
+            gap: 3rem !important;
+         }
+      }
+
+     
+      @media screen and (max-width: 768px) {
+         * {
+            box-sizing: border-box !important;
+            max-width: 100% !important;
+         }
+
+         body {
+            overflow-x: hidden !important;
+            padding: 5px !important;
+         }
+
+      
+         input,
+         textarea,
+         button,
+         a {
+            min-height: 44px !important;
+            font-size: 16px !important;
+            
+         }
+
+         
+         input,
+         textarea {
+            border-radius: 8px !important;
+            padding: 12px 15px !important;
+         }
+
+        
+         .firstsection {
+            text-align: center !important;
+            padding: 25px 15px !important;
+         }
+      }
+
+    
+      @media screen and (min-width: 1200px) {
+         .box {
+            width: 85% !important;
+            max-width: 1200px !important;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <nav class="navbar">
+         <div class="logo">Anurag Portfolio</div>
+
+         <div class="navbarleft">
+            <a href="index.html">Home</a>
+            <a href="skill.html">Skills</a>
+            <a href="project.html">Projects</a>
+            <a href="cont.html" class="active">Contact me</a>
+         </div>
+      </nav>
+   </header>
+   <main>
+      <br>
+      <div class="firstsection">
+         <b>Contact Me</b>
+         <br>
+         <p>Have a project in mind? Let's work together to bring your ideas to life </p>
+      </div>
+      <div class="box">
+         <div class="firstbox">
+            <b> Contact Information</b>
+            <div class="innerbox">
+               <i class="fa-solid fa-location-dot icon"></i>
+               <div class="contact-text">
+                  <span> location</span>
+                  <span>Indore, M.P India </span>
+               </div>
+            </div>
+            <div class="innerbox1">
+               <i class="fa-solid fa-mobile-screen icon1"></i>
+               <div class="contact-text1">
+                  <span>Phone</span>
+                  <span>+91 9202871855</span>
+               </div>
+            </div>
+            <div class="innerbox2">
+               <i class="fa-regular fa-envelope icon2"></i>
+               <div class="contact-text2">
+                  <span>Email</span>
+                  <span>kushwahanurag741@gmail.com</span>
+               </div>
+            </div>
+         </div>
+         <div class="secondbox">
+            <div class=" namebox ">
+
+               <label class="name">
+                  <b> Name </b>
+                  <br>
+                  <input type="text" requrid placeholder=" Name ">
+               </label>
+
+               <label class="email">
+                  <b> Email </b>
+                  <br>
+                  <input type="text" requrid placeholder=" Email Name">
+               </label>
+            </div>
+            <div class="subjectbox">
+
+               <lablel class="subject ">
+                  <b> Subject </b>
+                  <br>
+                  <input type="text" required placeholder="What's this about?">
+               </lablel>
+            </div>
+            <div class="messagebox">
+
+
+               <label class="message">
+                  <label> Message </label>
+                  <br>
+                  <textarea type="text" required placeholder="Tell me about your project..."> </textarea>
+            </div>
+            <div class="buttonbox">
+               <button type="sumbmit" class="send-btn"><i class="fa-regular fa-paper-plane"></i> Send Message </button>
+            </div>
+         </div>
+      </div>
+   </main>
+</body>
+
+</html>

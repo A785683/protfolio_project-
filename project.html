@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: Poppins;
+
+        }
+
+        body {
+            background-color: white;
+
+        }
+        .navbar {
+    background-color: rgb(69, 63, 63);
+    height: 60px; /* Height thodi badhai hai taki padding sahi dikhe */
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Isse Naam left mein aur Links right mein ho jayenge */
+    align-items: center;
+    padding: 0 30px; /* Sides mein thodi jagah dene ke liye */
+    
+}
+.navbarleft a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbarleft a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Active/Underline Home */
+.navbarleft .active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.navbarleft .active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: #fff;
+    border-radius: 6px;
+}
+
+/* Aapka Naam (Logo) */
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: lighter;
+}
+
+/* Right Side Links Box */
+.navbarleft {
+    display: flex;
+    gap: 7rem; /* Links ke beech mein barabar gap ke liye */
+}
+
+/* Links Ki Styling */
+.navbarleft a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px; 
+    font-weight: lighter;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.navbarleft a:hover {
+    transform: translateY(-2px);
+    color: #ddd; /* Hover par thoda light color */
+}
+
+
+        .topsection {
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .firstsection {
+            display: flex;
+            flex-direction: row;
+            /* Boxes ko side-by-side laane ke liye */
+            align-items: flex-start;
+            gap: 20px;
+            /* Dono ke beech gap dene ka modern tareeqa */
+            width: 95%;
+            margin: 0 auto;
+            /* Center karne ke liye */
+        }
+
+        /* Image waala box */
+        .firstsection1 {
+            background-image: url("image1.png");
+            background-size: cover;
+            background-position: center;
+            height: 25rem;
+            flex: 1;
+            /* Dono ko barabar jagah dene ke liye width ki jagah flex:1 use karein */
+            border-radius: 10px;
+        }
+
+        /* Text waala box */
+        .firstsection2 {
+            height: 25rem;
+            flex: 1;
+            /* Dono ko barabar jagah milegi */
+            border-radius: 10px;
+            display: flex;
+            /* Iske andar ke content ko align karne ke liye */
+            flex-direction: column;
+            /* Content upar-niche rahega */
+            gap: 10px;
+            /* Sections ke beech gap */
+            background-color: rgb(240, 233, 233);
+        }
+
+        /* Spelling mistake theek karein: column ki spelling cloumn thi */
+        .text1 {
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-weight: light;
+            background-color: rgb(240, 233, 233);
+            border-radius: 10px;
+
+
+        }
+
+        .text2 {
+            flex-direction: row;
+            border-radius: 8px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(240, 233, 233);
+
+        }
+
+        .text2 b {
+            height: auto;
+            width: 6rem;
+            background-color: rgb(219, 208, 208);
+            border-radius: 4px;
+            text-align: center;
+            border: 2px solid rgb(100, 93, 93);
+        }
+
+        .text1 big {
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .text3 {
+            flex-direction: row;
+            border-radius: 8px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(240, 233, 233);
+        }
+
+        .text3 b {
+            height: 1.5rem;
+            width: 9rem;
+            background-color: white;
+            border-radius: 4px;
+            justify-content: center;
+
+            align-items: center;
+            display: flex;
+            border: 2px solid black;
+        }
+
+        .text3 b:hover {
+            background-color: black;
+            color: white;
+
+        }
+
+        .secondsection {
+            display: flex;
+            flex-direction: row;
+            /* Boxes ko side-by-side laane ke liye */
+            align-items: flex-start;
+            gap: 20px;
+            /* Dono ke beech gap dene ka modern tareeqa */
+            width: 95%;
+            margin: 0 auto;
+            /* Center karne ke liye */
+        }
+
+        /* Image waala box */
+        .secondsection1 {
+            background-image: url("secondimage.png");
+            background-size: cover;
+            background-position: center;
+            height: 25rem;
+            flex: 1;
+            /* Dono ko barabar jagah dene ke liye width ki jagah flex:1 use karein */
+            border-radius: 10px;
+        }
+
+        /* Text waala box */
+        .secondsection2 {
+            height: 25rem;
+            flex: 1;
+            /* Dono ko barabar jagah milegi */
+            border-radius: 10px;
+            display: flex;
+            /* Iske andar ke content ko align karne ke liye */
+            flex-direction: column;
+            /* Content upar-niche rahega */
+            gap: 10px;
+            /* Sections ke beech gap */
+            background-color: rgb(240, 233, 233);
+        }
+
+        /* Spelling mistake theek karein: column ki spelling cloumn thi */
+        .secondtext1 {
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-weight: light;
+            background-color: rgb(240, 233, 233);
+            border-radius: 10px;
+
+
+        }
+
+        .secondtext2 {
+            flex-direction: row;
+            border-radius: 8px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(240, 233, 233);
+        }
+
+        .secondtext2 b {
+            height: auto;
+            width: 6rem;
+            background-color: rgb(219, 208, 208);
+            border-radius: 4px;
+            text-align: center;
+            border: 2px solid rgb(100, 93, 93);
+        }
+
+        .secondtext1 big {
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .secondtext3 {
+            flex-direction: row;
+            border-radius: 8px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(240, 233, 233);
+        }
+
+        .secondtext3 b {
+            height: 1.5rem;
+            width: 9rem;
+            background-color: white;
+            border-radius: 4px;
+            justify-content: center;
+
+            align-items: center;
+            display: flex;
+            border: 2px solid black;
+        }
+
+        .secondtext3 b:hover {
+            background-color: black;
+            color: white;
+
+        }
+
+        .thirdsection {
+            height: 15rem;
+            background-color: rgb(240, 233, 233);
+            align-items: flex-start;
+            gap: 20px;
+            /* Dono ke beech gap dene ka modern tareeqa */
+            width: 95%;
+            margin: 0 auto;
+            border-radius: 4px;
+            font-size: 1.2rem;
+        }
+
+        .thirdsection big {
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .thirdtext2 {
+            flex-direction: row;
+            border-radius: 8px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(240, 233, 233);
+        }
+
+        .thirdtext2 b {
+            height: auto;
+            width: 6rem;
+            background-color: rgb(219, 208, 208);
+            border-radius: 4px;
+            text-align: center;
+            border: 2px solid rgb(100, 93, 93);
+        }
+
+        .thirdtext3 {
+            flex-direction: row;
+            border-radius: 8px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(240, 233, 233);
+        }
+
+        .thirdtext3 b {
+            height: 1.5rem;
+            width: 9rem;
+            background-color: white;
+            border-radius: 4px;
+            justify-content: center;
+
+            align-items: center;
+            display: flex;
+            border: 2px solid black;
+        }
+
+        .thirdtext3 b:hover {
+            background-color: black;
+            color: white;
+
+        }
+       
+/* MOBILE (0-480px) */
+@media screen and (max-width: 480px) {
+    /* NAVBAR MOBILE */
+    .navbar {
+        height: 50px !important;
+        padding: 0 12px !important;
+        border-radius: 8px !important;
+    }
+    
+    .logo {
+        font-size: 18px !important;
+    }
+    
+    .navbarleft {
+        gap: 5px !important;
+    }
+    
+    .navbarleft a {
+        font-size: 13px !important;
+        padding: 6px 10px !important;
+    }
+    
+    
+    .topsection {
+        padding: 20px 10px !important;
+    }
+    
+   
+    .firstsection {
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 98% !important;
+        margin: 20px auto !important;
+    }
+    
+    .firstsection1, .firstsection2 {
+        height: 200px !important;
+        width: 100% !important;
+    }
+    
+    .text1 big {
+        font-size: 1.4rem !important;
+    }
+    
+    .text2, .text3 {
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 15px !important;
+    }
+    
+    .text2 b, .text3 b {
+        width: 90% !important;
+        height: 40px !important;
+        margin: 5px 0 !important;
+    }
+    
+    
+    .secondsection {
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 98% !important;
+        margin: 20px auto !important;
+    }
+    
+    .secondsection1, .secondsection2 {
+        height: 200px !important;
+        width: 100% !important;
+    }
+    
+    .secondtext2, .secondtext3 {
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 15px !important;
+    }
+    
+    .secondtext2 b, .secondtext3 b {
+        width: 90% !important;
+        height: 40px !important;
+    }
+    
+    
+    .thirdsection {
+        height: auto !important;
+        min-height: 200px !important;
+        width: 98% !important;
+        margin: 20px auto !important;
+        padding: 25px 15px !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .thirdsection big {
+        font-size: 1.3rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .thirdtext2, .thirdtext3 {
+        flex-direction: column !important;
+        gap: 12px !important;
+        padding: 15px !important;
+    }
+    
+    .thirdtext2 b, .thirdtext3 b {
+        width: 95% !important;
+        height: 45px !important;
+        margin: 5px auto !important;
+        font-size: 14px !important;
+    }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .navbar {
+        height: 55px !important;
+        padding: 0 20px !important;
+    }
+    
+    .navbarleft {
+        gap: 1.5rem !important;
+    }
+    
+   
+    .firstsection, .secondsection {
+        flex-direction: row !important;
+        width: 96% !important;
+        gap: 25px !important;
+    }
+    
+    .firstsection1, .firstsection2, .secondsection1, .secondsection2 {
+        height: 220px !important;
+    }
+    
+    .thirdsection {
+        width: 96% !important;
+        height: auto !important;
+        padding: 30px !important;
+    }
+    
+    .text2 b, .text3 b, .secondtext2 b, .secondtext3 b {
+        width: 5rem !important;
+        height: 35px !important;
+    }
+}
+
+/* SMALL LAPTOP (769px-1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .navbarleft {
+        gap: 3rem !important;
+    }
+    
+    .firstsection, .secondsection {
+        width: 92% !important;
+    }
+    
+    .thirdsection {
+        width: 92% !important;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    * {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        padding: 8px !important;
+    }
+    
+    
+    .text3 b, .secondtext3 b, .thirdtext3 b {
+        min-height: 44px !important;
+        min-width: 80px !important;
+        font-size: 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    
+    .firstsection1, .secondsection1 {
+        background-size: cover !important;
+        background-position: center !important;
+        min-height: 180px !important;
+    }
+    
+   
+    .text1 big, .secondtext1 big {
+        font-size: 1.5rem !important;
+    }
+    
+    .text1, .secondtext1 {
+        padding: 20px !important;
+        text-align: center !important;
+    }
+}
+
+/* DESKTOP OPTIMIZATION */
+@media screen and (min-width: 1200px) {
+    .firstsection, .secondsection {
+        width: 85% !important;
+        max-width: 1200px !important;
+    }
+    
+    .thirdsection {
+        width: 85% !important;
+        max-width: 1200px !important;
+    }
+}
+
+
+@media screen and (hover: none) and (pointer: coarse) {
+    .text3 b:hover, .secondtext3 b:hover, .thirdtext3 b:hover {
+        background-color: white !important;
+        color: black !important;
+    }
+}
+    </style>
+</head>
+ 
+<body>
+     <header>
+  <nav class="navbar">
+    <div class="logo">Anurag Portfolio</div>
+
+    <div class="navbarleft">
+      <a href="index.html">Home</a>
+      <a href="skill.html">Skills</a>
+      <a href="project.html" class="active">Projects</a>
+      <a href="cont.html">Contact me</a>
+    </div>
+  </nav>
+</header>
+    <main>
+     <div class=" topsection ">
+            <h1> Featured Projects </h1>
+            <br>
+            <big> A selection of my recent work and side projects </big>
+        </div>
+
+        <br>
+        <div class="firstsection">
+            <span class="firstsection1">
+            </span>
+            <div class="firstsection2">
+                <span class="text1">
+                    <br>
+                    <big> Tic-Toc Game </big>
+                    <br>
+
+                    <p>A modern Tic-toc game platform built with</p>
+                    <p>Html , Css and javascript featuring and </p>
+                    <p>real-time inventory management system. </p>
+
+                </span>
+                <br>
+                <div class="text2">
+                    <b><i class="fa-brands fa-html5"></i>Html</b><b><i class="fa-brands fa-css3-alt"></i>Css</b> <b><i
+                            class="fa-brands fa-js"></i>Javascript</b>
+                </div>
+                <br>
+                <div class="text3">
+                    <b><i class="fa-brands fa-github"> </i> code</b>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        </hr>
+        <br>
+        <div class="secondsection">
+            <span class="secondsection1">
+            </span>
+            <div class="secondsection2">
+                <span class="secondtext1">
+                    <br>
+                    <big> Amazon Clone</big>
+                    <br>
+
+                    <p>A high-fidelity landing page recreation focusing on</p>
+                    <p>pixel-perfect design and complex Css layouts. this </p>
+                    <p>project demonstrates strong foundations in modern
+                    </p>
+                    <p>web styling and Structured Html Architecture.</p>
+                    <b>Multi-level Navigation, Responsive Grid</b>
+                    <b>Layout, and Hover Effects</b>
+
+                </span>
+                <br>
+                <div class="secondtext2">
+                    <b><i class="fa-brands fa-html5"></i>Html</b><b><i class="fa-brands fa-css3-alt"></i>Css</b> <b><i
+                            class="fa-brands fa-js"></i>Javascript</b>
+                </div>
+                <br>
+                <div class="secondtext3">
+                    <b><i class="fa-brands fa-github"></i>code</b>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <hr>
+        <br>
+        <div class="thirdsection">
+            <span class="thirdsection1">
+            </span>
+            <div class="thirdsection2">
+                <span class="thirdtext1">
+                    <br>
+                    <big> My Portfolio </big>
+                    <br>
+
+                    <p> A pixel-perfect landing page built with HTML5, CSS3, and JavaScript.
+                        Focused on mastering complex Flexbox/Grid layouts and responsive navigation.
+                        This project highlights my ability to translate
+                        professional designs into clean, interactive code with smooth hover effects.</p>
+
+                </span>
+                <br>
+                <div class="thirdtext2">
+                    <b><i class="fa-brands fa-html5"></i>Html</b><b><i class="fa-brands fa-css3-alt"></i>Css</b> <b><i
+                            class="fa-brands fa-js"></i>Javascript</b>
+                </div>
+                <br>
+                <div class="thirdtext3">
+                    <b><i class="fa-brands fa-github"></i>code</b>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
